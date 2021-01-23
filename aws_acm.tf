@@ -9,6 +9,10 @@
 // The base domain specified by ${var.base_domain}
 // A wildcard domain cert of form *.${var.base_domain}
 data "aws_acm_certificate" "wildcard_website" {
+
+  // AWS only supports ACM certs within the Virginia region for cloudfront usage
+  provider = aws.us-east-1-region 
+
   domain      = var.base_domain
   statuses    = ["ISSUED"]
   most_recent = true
