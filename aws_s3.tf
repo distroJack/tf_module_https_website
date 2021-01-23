@@ -42,7 +42,7 @@ resource "aws_s3_bucket_policy" "domain_bucket_policy" {
 // use aws CLI to sync static files with bucket
 resource "null_resource" "remove_and_upload_to_s3" {
   provisioner "local-exec" {
-    command = "aws s3 sync ${var.static_path} s3://${aws_s3_bucket.domain_bucket.id}"
+    command = "aws s3 sync ${var.static_path} s3://${aws_s3_bucket.domain_bucket.id} --profile ${var.profile}"
   }
   depends_on = [ aws_s3_bucket.domain_bucket ]
 
