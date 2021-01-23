@@ -19,5 +19,5 @@ output "acm_certificate" {
 // cloudfront cdn access
 // I don't anticipate much use of this but 🤷
 output "website_cdn" {
-    value = aws_cloudfront_distribution.aws_cloudfront_distribution
+    value = aws_cloudfront_distribution.website_cdn_root
 }
