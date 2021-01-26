@@ -3,6 +3,9 @@
 ## Purpose
 A module that allows easy setup of an https static site on aws
 
+# Testing/Examples:
+Module tests/examples can be found here https://github.com/distroJack/tf_modules_tests/tree/main
+
 ## NOTES:
 - You must have a valid route 53 host zone in your AWS account
 	- Terraform generated host zones have invalid DNS records that differ from the DNS servers AWS assigns to your site
