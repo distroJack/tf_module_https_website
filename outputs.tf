@@ -13,11 +13,11 @@ output "route_53_site_zone" {
 
 // acm certificate access
 output "acm_certificate" {
-    value = data.aws_acm_certificate.wildcard_website 
+  value = data.aws_acm_certificate.wildcard_website
 }
 
 // cloudfront cdn access
 // I don't anticipate much use of this but 🤷
 output "website_cdn" {
-    value = aws_cloudfront_distribution.website_cdn_root
+  value = aws_cloudfront_distribution.website_cdn_root
 }

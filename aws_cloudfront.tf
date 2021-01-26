@@ -1,10 +1,10 @@
 resource "aws_cloudfront_distribution" "website_cdn_root" {
   enabled     = true
   price_class = "PriceClass_All" # Select the correct PriceClass depending on who the CDN is supposed to serve (https://docs.aws.amazon.com/AmazonCloudFront/ladev/DeveloperGuide/PriceClass.html)
-  aliases     = [
-      aws_s3_bucket.domain_bucket.id,
-      aws_s3_bucket.www_bucket.id,
-    ]
+  aliases = [
+    aws_s3_bucket.domain_bucket.id,
+    aws_s3_bucket.www_bucket.id,
+  ]
 
   origin {
     origin_id   = join("-", ["S3", aws_s3_bucket.domain_bucket.id])

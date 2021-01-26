@@ -3,7 +3,7 @@
 // AWS doesn't properly update DNS servers once a zone is deleted
 // This forces manual effort no matter what. I prefer one and done on start.
 data "aws_route53_zone" "website_zone" {
-  name =  var.base_domain
+  name = var.base_domain
 }
 
 // record for ${base_domain} site attached to CDN

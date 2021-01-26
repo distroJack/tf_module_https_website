@@ -11,7 +11,7 @@
 data "aws_acm_certificate" "wildcard_website" {
 
   // AWS only supports ACM certs within the Virginia region for cloudfront usage
-  provider = aws.us-east-1-region 
+  provider = aws.us-east-1-region
 
   domain      = var.base_domain
   statuses    = ["ISSUED"]
